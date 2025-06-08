@@ -14,14 +14,13 @@ struct TabBarView: View {
         VStack(spacing: 0) {
             ZStack {
                 switch selectedTab {
-                case 0: Text("History")
-                case 1: Text("Recs")
-                case 2: Text("Scan")
+                case 0: Text("History").bold()
+                case 1: Text("Recs").bold()
+                case 2: Text("Scan").bold()
                 case 3: ContentView()
-                default: Text("Search")
+                default: Text("Search").bold()
                 }
             }
-            .bold()
             
             Spacer()
             
