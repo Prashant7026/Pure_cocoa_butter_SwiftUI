@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var pureCocoaButterViewButtonTapped: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Button {
+                pureCocoaButterViewButtonTapped.toggle()
+            } label: {
+                Text("Tap Me!")
+                    .padding()
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(8.0)
+            }
+            .navigationDestination(isPresented: $pureCocoaButterViewButtonTapped) {
+                PureCocoaButterView()
+            }
         }
-        .padding()
+        .accentColor(Color.blue)
     }
 }
 
